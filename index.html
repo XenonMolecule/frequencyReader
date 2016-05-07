@@ -10,12 +10,13 @@
         </style>
     </head>
     <body>
-        <div id="bar"></div>
-        <div id="mp3_player">
-          <div id="audio_box"></div>
-          <canvas id="analyser_render" width="2048px"></canvas>
-        </div>
+        <input type='file' onchange='openFile(event)'>
+        <ul style="list-style:none;" class = "output">
+            
+        </ul>
         <!--Start Coding above here!!!-->
+        <script src='https://cwilso.github.io/WebMIDIAPIShim/lib/WebMIDIAPI.js'></script>
+        <script src='./node_modules/midifile/dist/MIDIFile.js'></script>
         <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
         <script type="text/javascript" src="app.js"></script>
     </body>
