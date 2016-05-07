@@ -16,19 +16,21 @@ const int song[3][1038] = {{67,12,600},{67,12,1200},{67,12,1800},{63,9,2250},{70
 {80,9,88650},{79,3,88800},{78,3,88950},{77,3,89100},{78,6,89400},{70,6,89700},{70,6,90000},{75,12,90600},{74,9,91050},{73,3,91200},{72,3,91350},{59,3,91500},{72,6,91800},{65,6,92100},{65,6,92400},{68,12,93000},
 {65,9,93450},{72,3,93600},{69,12,94200},{65,9,94650},{72,3,94800},{45,6,95100},{41,6,95400},{69,12,96000}};
 const int songLength = 1038;
+const int noteThreshold = 5;
 
 task playSong(){
 	int currentNote = 0;
 	clearTimer(T1);
 	while(currentNote<songLength){
 		if(bSoundQueueAvailable){
-			if(time1[T1]==song[currentNote][3]){
-				playTone(song[currentNote][1],song[currentNote][2]);
+			if(abs(time1[T1]-song[currentNote][2])<noteThreshold){
+				playTone(song[currentNote][0],song[currentNote][1]);
 				currentNote++;
-			} else if(time1[T1]>song[currentNote][3]){
+			} else if(time1[T1]>song[currentNote][2]){
 				currentNote++;
 			}
 		}
+		wait1Msec(1);
 	}
 }
 
