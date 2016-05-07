@@ -12,7 +12,7 @@ var openFile = function(event) {
         midiFile = new MIDIFile(data);
         var events = midiFile.getMidiEvents();
         console.log(events);
-        var arrayOutput = "[";
+        var arrayOutput = "{";
         $(".output").append("<li><p>Ticks Per Beat: "+midiFile.header.getTicksPerBeat()+"</p></li>")
         for(var i = 0; i < events.length; i++){
             if(events[i].subtype==04){
@@ -24,14 +24,15 @@ var openFile = function(event) {
                     $(".output").append("<li><p>["+events[i].playTime+"]playTone("+events[i].param1+","+Math.round(events[i].delta/10)+")</p></li>")
             
                 } else {
-                    arrayOutput+="["+events[i].param1+","+Math.round(events[i].delta/10)+","+events[i].playTime+"],";
+                    arrayOutput+="{"+events[i].param1+","+Math.round(events[i].delta/10)+","+events[i].playTime+"},";
                 }
             }
         }
         arrayOutput = arrayOutput.slice(0,-1);
-        arrayOutput+="]";
+        arrayOutput+="}";
         if($('input[name=outputType]:checked', '#outputType').val()==="array"){
             $(".output").append("<li><p>"+arrayOutput+"</p></li>")
+            $(".output").append("<li><p>The array length is: "+events.length+"</p></li>")
             console.log(arrayOutput);
         }
     };
