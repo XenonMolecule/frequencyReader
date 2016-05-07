@@ -1,0 +1,28 @@
+{
+  "name": "frequencyreader",
+  "version": "1.0.0",
+  "description": "Get the frequency and time of each tone of a song, so a vex robot can play it",
+  "main": "app.js",
+  "dependencies": {
+    "midifile": "^1.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XenonMolecule/frequencyReader.git"
+  },
+  "keywords": [
+    "robotc",
+    "midi",
+    "dontUseME"
+  ],
+  "author": "XenonMolecule",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/XenonMolecule/frequencyReader/issues"
+  },
+  "homepage": "https://github.com/XenonMolecule/frequencyReader#readme"
+}
