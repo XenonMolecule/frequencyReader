@@ -25,7 +25,7 @@ var openFile = function(event) {
             
                 } else {
                     arrayOutput+="{"+events[i].param1+","+Math.round(events[i].delta/10)+","+events[i].playTime+"},";
-                }
+                }    
             }
         }
         arrayOutput = arrayOutput.slice(0,-1);
