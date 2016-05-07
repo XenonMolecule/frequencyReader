@@ -10,6 +10,12 @@
         </style>
     </head>
     <body>
+        <p>Select your Output Type</p>
+        <form id="outputType">
+            <input type = "radio" name="outputType" value="array" checked>array<br>
+            <input type = "radio" name="outputType" value="playTone">playTone<br>
+        </form>
+        <br>
         <input type='file' onchange='openFile(event)'>
         <ul style="list-style:none;" class = "output">
             
