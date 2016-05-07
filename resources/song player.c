@@ -21,7 +21,6 @@ task playSong(){
 	int currentNote = 0;
 	clearTimer(T1);
 	while(currentNote<songLength){
-		writeDebugStreamLine("Hello");
 		if(bSoundQueueAvailable){
 			if(time1[T1]==song[currentNote][3]){
 				playTone(song[currentNote][1],song[currentNote][2]);

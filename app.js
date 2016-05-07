@@ -20,7 +20,7 @@ var openFile = function(event) {
             }
             if(events[i].delta){
                 if($('input[name=outputType]:checked', '#outputType').val()==="playTone"){
-                    //console.log("playTone("+events[i].param1+","+events[i].delta+");");
+                    console.log("playTone("+events[i].param1+","+events[i].delta+");");
                     $(".output").append("<li><p>["+events[i].playTime+"]playTone("+events[i].param1+","+Math.round(events[i].delta/10)+")</p></li>")
             
                 } else {
