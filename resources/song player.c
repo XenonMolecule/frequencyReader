@@ -25,6 +25,8 @@ task playSong(){
 			if(time1[T1]==song[currentNote][3]){
 				playTone(song[currentNote][1],song[currentNote][2]);
 				currentNote++;
+			} else if(time1[T1]>song[currentNote][3]){
+				currentNote++;
 			}
 		}
 	}
